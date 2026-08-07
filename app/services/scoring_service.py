@@ -1,4 +1,5 @@
-
+from app.models.company import Company
+from app.models.company import CompanyScore
 
 def calculate_company_score(company: Company) -> CompanyScore:
     partnership_score = 0
@@ -25,7 +26,8 @@ def calculate_company_score(company: Company) -> CompanyScore:
     if company.has_existing_nba_partnership  == True:
         partnership_score -= 30
         reasoning.append('Company already has an existing NBA partnership, reducing the likelihood of securing a new sponsorship opportunity.')
-    
+    else:
+        company.has_existing_nba_partnership ==  False
     
     if partnership_score >= 75:
        recommendation = 'High Priority'
