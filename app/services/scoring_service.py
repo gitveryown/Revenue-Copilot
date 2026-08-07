@@ -18,6 +18,11 @@ def calculate_company_score(company: Company) -> CompanyScore:
     elif company.annual_revenue >= 500000000:
         partnership_score += 15
         reasoning.append('The company demonstrates strong financial growth and has the potential to support meaningful sponsorship investments.')
+    
+    elif company.annual_revenue >= 100000000:
+        partnership_score += 5
+        reasoning.append('The company demonstrates strong financial growth and has the potential to support meaningful sponsorship investments.')
+        
         
     if company.city.lower() == 'atlanta':
         partnership_score += 10
